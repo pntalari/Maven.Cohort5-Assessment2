@@ -41,18 +41,13 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        String retStr = "";
-        String temp = "";
-        temp = reverse(string);
-
-        for (int i = 0; i < temp.length(); i++) {
-            for (int j = 0; j < charactersToRemove.length(); j++) {
-                if (temp.charAt(i) != charactersToRemove.charAt(j)) {
-                    retStr += temp.charAt(i);
-                }
-            }
+        StringBuilder str = new StringBuilder(string);
+        Integer index = 0;
+        for(int i = 0;i<charactersToRemove.length();i++){
+           index = str.indexOf(Character.toString(charactersToRemove.charAt(i)));
+           str.deleteCharAt(index);
         }
-        return retStr;
+        return str.toString();
     }
 
     /**

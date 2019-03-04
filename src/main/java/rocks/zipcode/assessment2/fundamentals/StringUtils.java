@@ -70,15 +70,17 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        Boolean flag = false;
-        for (int i = 0; i < string.length(); i++) {
-            if (!Character.isAlphabetic(string.charAt(i))||!Character.isSpaceChar(string.charAt(i))) {
-                flag = true;
-            }
-            else
-                flag = false;
-        }
-        return  flag;
+        return string.matches("-?\\d+(\\.\\d+)?");
+
+//        Boolean flag = false;
+//        for (int i = 0; i < string.length(); i++) {
+//            if (!Character.isAlphabetic(string.charAt(i))||!Character.isSpaceChar(string.charAt(i))) {
+//                flag = true;
+//            }
+//            else
+//                flag = false;
+//        }
+//        return  flag;
     }
 
     /**
