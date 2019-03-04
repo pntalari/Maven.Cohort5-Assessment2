@@ -26,8 +26,9 @@ public class AnimalConstructorTest {
 
         // then
         Assert.assertEquals(expectedId, actualId);
-        Assert.assertEquals(expectedOwner, actualOwner);
         Assert.assertEquals(expectedAddress, actualAddress);
+        Assert.assertEquals(expectedOwner, actualOwner);
+
     }
 
     @Test

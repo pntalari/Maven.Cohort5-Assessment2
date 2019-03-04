@@ -32,7 +32,7 @@ public class BasicStringUtils {
         String retStr1 = reverse(string1);
         String retStr2 = reverse(string2);
 
-        return retStr1+retStr2;
+        return retStr1 + retStr2;
     }
 
     /**
@@ -42,12 +42,14 @@ public class BasicStringUtils {
      */
     public static String removeCharacters(String string, String charactersToRemove) {
         String retStr = "";
+        String temp = "";
+        temp = reverse(string);
 
-        for (int i =0;i<charactersToRemove.length();i++)
-        {
-            if(!string.contains(charactersToRemove))
-            {
-                retStr += string.charAt(i);
+        for (int i = 0; i < temp.length(); i++) {
+            for (int j = 0; j < charactersToRemove.length(); j++) {
+                if (temp.charAt(i) != charactersToRemove.charAt(j)) {
+                    retStr += temp.charAt(i);
+                }
             }
         }
         return retStr;
@@ -59,11 +61,11 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-       String retStr = "";
-       String reversed = "";
-       reversed = reverse(string);
-       retStr = removeCharacters(string,charactersToRemove);
+        String retStr = "";
+        String reversed = "";
+        reversed = reverse(string);
+        retStr = removeCharacters(string, charactersToRemove);
 
-       return retStr;
+        return retStr;
     }
 }

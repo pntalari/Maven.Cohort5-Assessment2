@@ -13,6 +13,7 @@ public class Person {
     Long pId;
     String pName;
     Address pAddress;
+
     public Person(Long id, String name, Address address) {
         this.pId = id;
         this.pName = name;
@@ -20,7 +21,7 @@ public class Person {
     }
 
     public Person() {
-        this.pId = 0L;
+        this.pId = Long.MIN_VALUE;
         this.pName = "";
         this.pAddress = null;
     }
@@ -53,8 +54,29 @@ public class Person {
     }
 
     @Override
-    public boolean equals(Object o) {
-
-        return (Boolean)null;
+    public String toString() {
+        String str = String.format("Person{id=" + "'" + pId + "'" + "," +
+                " name=" + "'" + pName + "'" + "," +
+                " address=" + "'" + this.getAddress() + "'" + "," +
+                "}");
+        return str;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        Person per = (Person) o;
+        Boolean ret = false;
+        if(o == null){
+            ret = false;
+        }
+        else if((this.pName==(((Person) o).getName()) && (this.pAddress==(((Person) o).getAddress()))
+            && this.pId==(((Person) o).getId()))){
+            ret = true;
+        }
+        else{
+            ret = false;
+        }
+        return ret;
+    }
+
 }

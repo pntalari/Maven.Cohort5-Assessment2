@@ -11,14 +11,13 @@ public class Animal {
 
     Long aId;
     Person aPerson = new Person();
-    Person personObj = new Person();
 
     public Animal() {
     }
 
 
     /**
-     * @param id - id of animal
+     * @param id    - id of animal
      * @param owner - owner of animal
      */
     public Animal(Long id, Person owner) {
@@ -45,7 +44,24 @@ public class Animal {
     }
 
     public Address getAddress() {
+        return aPerson.getAddress();
+    }
 
-        return personObj.getAddress();
+    @Override
+    public boolean equals(Object o) {
+        Animal ani = (Animal) o;
+        Boolean ret = false;
+
+        if (o == null) {
+            ret = false;
+        } else if (this.aPerson.equals(((Animal) o).getOwner())) {
+
+        } else {
+            ret = false;
+        }
+
+        return ret;
+
     }
 }
+
