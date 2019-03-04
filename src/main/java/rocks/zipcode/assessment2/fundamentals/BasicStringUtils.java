@@ -55,23 +55,23 @@ public class BasicStringUtils {
 
     }
 
-    public static String removeFunction(StringBuilder sbr, String charactersToRemove) {
-        Integer index = 0;
-        for (int i = 0; i < charactersToRemove.length(); i++) {
-            index = sbr.indexOf(Character.toString(charactersToRemove.charAt(i)));
-            sbr.deleteCharAt(index);
-        }
-        return sbr.toString();
-    }
-
     /**
      * @param string             - the string to be manipulated
      * @param charactersToRemove - characters to be removed from the string
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        String reversed = reverse(string);
-        String retStr = "";
-        return retStr;
+        String retStr = removeCharacters(string,charactersToRemove);
+        return reverse(retStr);
+    }
+
+    // added this function
+    public static String removeFunction(StringBuilder sbr, String charactersToRemove) {
+        Integer index;
+        for (int i = 0; i < charactersToRemove.length(); i++) {
+            index = sbr.indexOf(Character.toString(charactersToRemove.charAt(i)));
+            sbr.deleteCharAt(index);
+        }
+        return sbr.toString();
     }
 }

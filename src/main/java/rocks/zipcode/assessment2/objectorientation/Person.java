@@ -55,10 +55,8 @@ public class Person {
 
     @Override
     public String toString() {
-        String str = String.format("Person{id=" + "'" + pId + "'" + "," +
-                " name=" + "'" + pName + "'" + "," +
-                " address=" + "'" + this.getAddress() + "'" + "," +
-                "}");
+        String str = String.format("Person{id=" + pId + "," +
+                " name=" + "'" + pName + "'" + "," + " address=" + this.getAddress().toString() + "}");
         return str;
     }
 

@@ -38,13 +38,12 @@ public class Inventory {
                 mapInventory.put(item,1);
             }
         }
-      //  list.add(item);
 
     /**
      * @param item - decrement the number of this item in stock by 1
      */
     public void removeItemFromInventory(String item) {
-        if (mapInventory.containsKey(item))
+      //  if (mapInventory.containsKey(item))
             mapInventory.remove(item);
     }
 
