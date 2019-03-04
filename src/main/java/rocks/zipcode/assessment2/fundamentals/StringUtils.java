@@ -71,16 +71,6 @@ public class StringUtils {
      */
     public static Boolean isNumericString(String string) {
         return string.matches("-?\\d+(\\.\\d+)?");
-
-//        Boolean flag = false;
-//        for (int i = 0; i < string.length(); i++) {
-//            if (!Character.isAlphabetic(string.charAt(i))||!Character.isSpaceChar(string.charAt(i))) {
-//                flag = true;
-//            }
-//            else
-//                flag = false;
-//        }
-//        return  flag;
     }
 
     /**

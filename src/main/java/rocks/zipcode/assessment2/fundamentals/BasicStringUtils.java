@@ -42,12 +42,26 @@ public class BasicStringUtils {
      */
     public static String removeCharacters(String string, String charactersToRemove) {
         StringBuilder str = new StringBuilder(string);
-        Integer index = 0;
-        for(int i = 0;i<charactersToRemove.length();i++){
-           index = str.indexOf(Character.toString(charactersToRemove.charAt(i)));
-           str.deleteCharAt(index);
+        String temp = removeFunction(str, charactersToRemove);
+        StringBuilder temp1   = new StringBuilder(temp);
+
+        if(temp.contains(charactersToRemove)) {
+          return removeFunction(temp1, charactersToRemove);
         }
-        return str.toString();
+        else
+        {
+            return temp;
+        }
+
+    }
+
+    public static String removeFunction(StringBuilder sbr, String charactersToRemove) {
+        Integer index = 0;
+        for (int i = 0; i < charactersToRemove.length(); i++) {
+            index = sbr.indexOf(Character.toString(charactersToRemove.charAt(i)));
+            sbr.deleteCharAt(index);
+        }
+        return sbr.toString();
     }
 
     /**
@@ -56,11 +70,8 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
+        String reversed = reverse(string);
         String retStr = "";
-        String reversed = "";
-        reversed = reverse(string);
-        retStr = removeCharacters(string, charactersToRemove);
-
         return retStr;
     }
 }
