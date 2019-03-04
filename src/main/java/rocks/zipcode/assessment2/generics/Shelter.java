@@ -56,7 +56,7 @@ public class Shelter<T> implements Iterable<T> {
                 break;
             }
         }
-        
+
         return ret;
     }
 
