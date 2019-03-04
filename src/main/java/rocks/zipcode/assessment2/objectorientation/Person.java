@@ -71,8 +71,8 @@ public class Person {
         if(o == null){
             ret = false;
         }
-        else if((this.pName==per.getName()) && (this.pAddress== per.getAddress())
-            && this.pId==per.getId()){
+        else if((this.pName.equals(per.getName()) && (this.pAddress.equals(per.getAddress()))
+            && this.pId.equals(per.getId()))){
             ret = true;
         }
         else{

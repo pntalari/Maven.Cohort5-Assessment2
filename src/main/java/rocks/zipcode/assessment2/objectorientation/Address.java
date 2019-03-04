@@ -98,9 +98,9 @@ public class Address {
         Boolean ret = false;
         if (o == null) {
             ret = false;
-        } else if (this.fAddrLine==(addr.getAddressLine1()) && this.sAddrLine==(addr.getAddressLine2())
-                && this.aCity==(addr.getCity()) && this.aState==(addr.getState())
-                && this.zip==(addr.getZipcode())) {
+        } else if (this.fAddrLine.equals(addr.getAddressLine1()) && this.sAddrLine.equals(addr.getAddressLine2())
+                && this.aCity.equals(addr.getCity()) && this.aState.equals(addr.getState())
+                && this.zip.equals(addr.getZipcode())) {
             ret = true;
         } else {
             ret = false;
