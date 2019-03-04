@@ -55,8 +55,12 @@ public class Person {
 
     @Override
     public String toString() {
-        String str = String.format("Person{id=" + pId + "," +
-                " name=" + "'" + pName + "'" + "," + " address=" + this.getAddress().toString() + "}");
+        String str = "";
+        if(pAddress!=null) {
+            str = String.format("Person{id=" + pId + "," +
+                    " name=" + "'" + pName + "'" + ","
+                    + " address=" + getAddress().toString() + "}");
+        }
         return str;
     }
 
@@ -67,8 +71,8 @@ public class Person {
         if(o == null){
             ret = false;
         }
-        else if((this.pName==(((Person) o).getName()) && (this.pAddress==(((Person) o).getAddress()))
-            && this.pId==(((Person) o).getId()))){
+        else if((this.pName==per.getName()) && (this.pAddress== per.getAddress())
+            && this.pId==per.getId()){
             ret = true;
         }
         else{
